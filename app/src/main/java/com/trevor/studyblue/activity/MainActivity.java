@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.trevor.studyblue.BuildConfig;
 import com.trevor.studyblue.R;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        final ReposAdapter adapter = new ReposAdapter(this);
+        recyclerView.setAdapter(adapter);
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
         Call<List<Repo>> call = apiService.getRepos();
@@ -42,13 +45,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
                 List<Repo> repos = response.body();
-                recyclerView.setAdapter(new ReposAdapter(repos, R.layout.list_repo_item, context));
-                Log.d(TAG, "Number of repos received: " + repos.size());
+                adapter.updateList(repos);
+                String text = "Retrieved " + repos.size() + " repos.";
+                Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<List<Repo>> call, Throwable t) {
                 Log.e(TAG, t.toString());
+                Toast.makeText(context, "Failed to retrieve info", Toast.LENGTH_SHORT).show();
             }
         });
     }

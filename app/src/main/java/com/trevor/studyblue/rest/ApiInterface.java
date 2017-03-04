@@ -1,6 +1,6 @@
-package com.trevor.retrofittutorial.rest;
+package com.trevor.studyblue.rest;
 
-import com.trevor.retrofittutorial.model.MoviesResponse;
+import com.trevor.studyblue.model.MoviesResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

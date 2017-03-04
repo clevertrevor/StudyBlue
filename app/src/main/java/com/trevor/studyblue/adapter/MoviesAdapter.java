@@ -1,4 +1,4 @@
-package com.trevor.retrofittutorial.adapter;
+package com.trevor.studyblue.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.trevor.retrofittutorial.R;
-import com.trevor.retrofittutorial.model.Movie;
+import com.trevor.studyblue.R;
+import com.trevor.studyblue.model.Movie;
 
 import java.util.List;
 

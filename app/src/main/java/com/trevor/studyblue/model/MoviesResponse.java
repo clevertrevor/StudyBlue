@@ -1,4 +1,4 @@
-package com.trevor.retrofittutorial.model;
+package com.trevor.studyblue.model;
 
 import com.google.gson.annotations.SerializedName;
 

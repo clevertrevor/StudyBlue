@@ -1,4 +1,4 @@
-package com.trevor.retrofittutorial;
+package com.trevor.studyblue;
 
 import org.junit.Test;
 

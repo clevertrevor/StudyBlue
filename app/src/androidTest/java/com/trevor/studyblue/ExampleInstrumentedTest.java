@@ -1,4 +1,4 @@
-package com.trevor.retrofittutorial;
+package com.trevor.studyblue;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

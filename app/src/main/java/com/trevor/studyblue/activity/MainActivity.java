@@ -1,4 +1,4 @@
-package com.trevor.retrofittutorial.activity;
+package com.trevor.studyblue.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,13 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.trevor.retrofittutorial.BuildConfig;
-import com.trevor.retrofittutorial.R;
-import com.trevor.retrofittutorial.adapter.MoviesAdapter;
-import com.trevor.retrofittutorial.model.Movie;
-import com.trevor.retrofittutorial.model.MoviesResponse;
-import com.trevor.retrofittutorial.rest.ApiClient;
-import com.trevor.retrofittutorial.rest.ApiInterface;
+import com.trevor.studyblue.BuildConfig;
+import com.trevor.studyblue.R;
+import com.trevor.studyblue.adapter.MoviesAdapter;
+import com.trevor.studyblue.model.Movie;
+import com.trevor.studyblue.model.MoviesResponse;
+import com.trevor.studyblue.rest.ApiClient;
+import com.trevor.studyblue.rest.ApiInterface;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.trevor.retrofittutorial.rest;
+package com.trevor.studyblue.rest;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

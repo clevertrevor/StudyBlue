@@ -9,18 +9,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.trevor.studyblue.R;
-import com.trevor.studyblue.model.Movie;
+import com.trevor.studyblue.adapter.ReposAdapter.RepoViewHolder;
+import com.trevor.studyblue.model.Repo;
 
 import java.util.List;
 
-public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewHolder> {
+public class ReposAdapter extends RecyclerView.Adapter<RepoViewHolder> {
 
-    private List<Movie> movies;
+    private List<Repo> repos;
     private int rowLayout;
     private Context context;
 
 
-    public static class MovieViewHolder extends RecyclerView.ViewHolder {
+    public static class RepoViewHolder extends RecyclerView.ViewHolder {
         LinearLayout moviesLayout;
         TextView movieTitle;
         TextView data;
@@ -28,7 +29,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         TextView rating;
 
 
-        public MovieViewHolder(View v) {
+        public RepoViewHolder(View v) {
             super(v);
             moviesLayout = (LinearLayout) v.findViewById(R.id.movies_layout);
             movieTitle = (TextView) v.findViewById(R.id.title);
@@ -38,30 +39,30 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         }
     }
 
-    public MoviesAdapter(List<Movie> movies, int rowLayout, Context context) {
-        this.movies = movies;
+    public ReposAdapter(List<Repo> repos, int rowLayout, Context context) {
+        this.repos = repos;
         this.rowLayout = rowLayout;
         this.context = context;
     }
 
     @Override
-    public MoviesAdapter.MovieViewHolder onCreateViewHolder(ViewGroup parent,
-                                                            int viewType) {
+    public RepoViewHolder onCreateViewHolder(ViewGroup parent,
+                                             int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
-        return new MovieViewHolder(view);
+        return new RepoViewHolder(view);
     }
 
 
     @Override
-    public void onBindViewHolder(MovieViewHolder holder, final int position) {
-        holder.movieTitle.setText(movies.get(position).getTitle());
-        holder.data.setText(movies.get(position).getReleaseDate());
-        holder.movieDescription.setText(movies.get(position).getOverview());
-        holder.rating.setText(movies.get(position).getVoteAverage().toString());
+    public void onBindViewHolder(RepoViewHolder holder, final int position) {
+        /*holder.movieTitle.setText(repos.get(position).getTitle());
+        holder.data.setText(repos.get(position).getReleaseDate());
+        holder.movieDescription.setText(repos.get(position).getOverview());
+        holder.rating.setText(repos.get(position).getVoteAverage().toString()); */
     }
 
     @Override
     public int getItemCount() {
-        return movies.size();
+        return repos.size();
     }
 }

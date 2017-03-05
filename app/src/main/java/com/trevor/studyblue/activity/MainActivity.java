@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.trevor.studyblue.BuildConfig;
 import com.trevor.studyblue.R;
 import com.trevor.studyblue.adapter.ReposAdapter;
 import com.trevor.studyblue.model.Repo;
@@ -23,9 +21,6 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
-
-    private final static String API_KEY = BuildConfig.API_KEY;
     private Context context;
 
     @Override
@@ -34,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.context = this;
 
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         final ReposAdapter adapter = new ReposAdapter(this);
         recyclerView.setAdapter(adapter);
@@ -52,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Repo>> call, Throwable t) {
-                Log.e(TAG, t.toString());
                 Toast.makeText(context, "Failed to retrieve info", Toast.LENGTH_SHORT).show();
             }
         });

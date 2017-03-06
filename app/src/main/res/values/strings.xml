@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CodeChallenge</string>
+    <string name="fail_message">Failed to retrieve repos</string>
+    <string name="success_message">Successfully retrieved repos</string>
+    <string name="no_repos">No Repos</string>
+    <string name="base_url">https://api.github.com/users/ocramius/</string>
+    <string name="ocramius_repo_retriever">Ocramius Repo Retriever</string>
+    <string name="header_description">Retrieves Ocramius\' Github repositories and displays repo information.</string>
 </resources>
